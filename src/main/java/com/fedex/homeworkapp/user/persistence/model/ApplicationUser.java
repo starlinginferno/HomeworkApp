@@ -3,16 +3,17 @@ package com.fedex.homeworkapp.user.persistence.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @Entity
-@NoArgsConstructor
 @Table(name = "users")
+@Data
+@NoArgsConstructor
 public class ApplicationUser {
 
     @Id
