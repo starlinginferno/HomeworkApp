@@ -1,5 +1,7 @@
 package com.fedex.homeworkapp.homework;
 
+import java.util.List;
+
 public interface HomeworkService {
 
     void saveHomework(Homework homework);
@@ -7,4 +9,6 @@ public interface HomeworkService {
     void editHomework(Long id);
 
     void deleteHomework(Long id);
+
+    List<Homework> getAllHomework();
 }
