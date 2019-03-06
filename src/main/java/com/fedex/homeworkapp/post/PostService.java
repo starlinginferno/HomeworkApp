@@ -2,9 +2,11 @@ package com.fedex.homeworkapp.post;
 
 public interface PostService {
 
-    PostModel createPost();
+    void createPost(PostModel postModel);
 
-    void deletePost();
+    void editPost(Long id, ApplicationUser applicationUser);
 
-    void editPost();
+    void deletePost(Long id);
+
+    void votePost(Long id, Boolean vote);
 }
