@@ -1,5 +1,6 @@
 package com.fedex.homeworkapp.post;
 
+import com.fedex.homeworkapp.user.persistence.model.ApplicationUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

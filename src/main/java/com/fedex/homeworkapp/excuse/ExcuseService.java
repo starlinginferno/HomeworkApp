@@ -1,4 +1,4 @@
-package com.fedex.homeworkapp.controllers.excuse;
+package com.fedex.homeworkapp.excuse;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,5 +9,5 @@ public interface ExcuseService {
 
     List<String> listExcuses() throws IOException;
 
-    ExcuseDTO mapExcuseDTO(String excuse);
+    ExcuseDTO mapExcuseDTO() throws IOException;
 }

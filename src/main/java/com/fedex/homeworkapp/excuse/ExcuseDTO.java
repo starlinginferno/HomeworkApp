@@ -1,4 +1,4 @@
-package com.fedex.homeworkapp.controllers.excuse;
+package com.fedex.homeworkapp.excuse;
 
 import lombok.Getter;
 import lombok.Setter;

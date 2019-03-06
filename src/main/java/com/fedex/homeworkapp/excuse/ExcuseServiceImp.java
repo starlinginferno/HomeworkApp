@@ -1,4 +1,4 @@
-package com.fedex.homeworkapp.controllers.excuse;
+package com.fedex.homeworkapp.excuse;
 
 import org.springframework.stereotype.Service;
 
@@ -34,9 +34,9 @@ public class ExcuseServiceImp implements ExcuseService {
         }
 
     @Override
-    public ExcuseDTO mapExcuseDTO(String excuse) {
+    public ExcuseDTO mapExcuseDTO() throws IOException {
         ExcuseDTO excuseDTO = new ExcuseDTO();
-        excuseDTO.setExcuse(excuse);
+        excuseDTO.setExcuse(generateExcuse());
         return excuseDTO;
     }
 }

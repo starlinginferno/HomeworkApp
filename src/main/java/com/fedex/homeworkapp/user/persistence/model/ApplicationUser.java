@@ -2,17 +2,20 @@ package com.fedex.homeworkapp.user.persistence.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @Entity
-@NoArgsConstructor
 @Table(name = "users")
+@Getter
+@Setter
 public class ApplicationUser {
 
     @Id
@@ -37,7 +40,7 @@ public class ApplicationUser {
     @JsonManagedReference
     private List<UserRole> roles = new ArrayList<>();
 
-    public void setRoles(List<UserRole> roles) {
-        this.roles = roles;
-    }
+//    public void setRoles(List<UserRole> roles) {
+//        this.roles = roles;
+//    }
 }
