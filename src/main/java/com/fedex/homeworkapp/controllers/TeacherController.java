@@ -5,15 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/")
 public class TeacherController {
 
-    @GetMapping("/students")
+    @GetMapping("students")
     public List<Student> getAllRegisteredStudents() {
         return (List<Student>) students;
     }
 
-    @GetMapping("/homeworks")
+    @GetMapping("homeworks")
     public List<Homework> getAllHomeworks() {
         return (List<Homework>) homeworks;
     }
