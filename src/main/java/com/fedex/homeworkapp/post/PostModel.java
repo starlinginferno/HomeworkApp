@@ -21,6 +21,6 @@ public class PostModel {
     private Integer score;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "commentsPost", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PostModel> postsComments;
 }
