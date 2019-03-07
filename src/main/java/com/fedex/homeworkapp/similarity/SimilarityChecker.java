@@ -76,4 +76,12 @@ public class SimilarityChecker {
         }
         return similarityPercentage;
     }
+
+    public List<String> similarityAnswers(Long id, HashMap<Long, Double> similarity) {
+        List<SimilarityModel> similarityAnswer = new ArrayList<>();
+        for (Long key : similarity.keySet()) {
+            Homework tempHomework = homeworkService.findById(key);
+            similarityAnswer.add(tempHomework.)
+        }
+    }
 }
