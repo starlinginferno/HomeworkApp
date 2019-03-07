@@ -17,4 +17,6 @@ public interface HomeworkService {
     List<Homework> getAllHomework();
 
     List<Homework> getHomeworksBySubject(Subject subject);
+
+    Homework findByStudent(Long id);
 }

@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface HomeworkRepository extends JpaRepository<Homework, Long> {
+    Homework findHomeworkByHomeworksUser(Long userId);
 }

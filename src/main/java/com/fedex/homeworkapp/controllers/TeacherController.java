@@ -2,10 +2,12 @@ package com.fedex.homeworkapp.controllers;
 
 import com.fedex.homeworkapp.homework.Homework;
 import com.fedex.homeworkapp.homework.HomeworkService;
+import com.fedex.homeworkapp.post.Subject;
 import com.fedex.homeworkapp.user.persistence.model.ApplicationUser;
 import com.fedex.homeworkapp.user.service.ApplicationUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,8 +31,8 @@ public class TeacherController {
         return applicationUserService.findStudents();
     }
 
-    @GetMapping("homework")
-    public List<Homework> getAllHomework() {
-        return homeworkService.getAllHomework();
+    @GetMapping("homework/{subject}")
+    public List<Homework> getAllHomework(@PathVariable("subject") Subject subject) {
+        return homeworkService.getHomeworksBySubject(subject);
     }
 }
