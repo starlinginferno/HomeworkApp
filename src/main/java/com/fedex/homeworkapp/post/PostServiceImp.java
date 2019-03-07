@@ -4,6 +4,8 @@ import com.fedex.homeworkapp.user.persistence.model.ApplicationUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PostServiceImp implements PostService {
 
@@ -38,5 +40,15 @@ public class PostServiceImp implements PostService {
     @Override
     public PostModel findById(Long id) {
         return null;
+    }
+
+    @Override
+    public List<PostModel> findPostsBySubject(String subject) {
+        for (Subject s : Subject.values()) {
+            if(s.getName().equals(subject.toUpperCase())) {
+                return postRepository.findAllBySubject(s);
+            }
+        }
+        throw new IllegalArgumentException("No such type");
     }
 }

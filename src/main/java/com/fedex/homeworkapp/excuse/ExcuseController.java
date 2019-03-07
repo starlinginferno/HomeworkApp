@@ -16,7 +16,7 @@ public class ExcuseController {
         this.excuseService = excuseService;
     }
 
-    @GetMapping("/api/excuse")
+    @GetMapping("/excuse")
     public ExcuseDTO showExcuse() throws IOException {
         return excuseService.mapExcuseDTO();
     }

@@ -10,4 +10,8 @@ public enum Subject {
     GEOGRAPHY,
     PHYSICS,
     CHEMISTRY;
+
+    public String getName() {
+        return this.name();
+    }
 }

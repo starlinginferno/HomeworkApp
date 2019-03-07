@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/homework")
 public class StudentController {
-
+    
     private HomeworkService homeworkService;
 
     @Autowired

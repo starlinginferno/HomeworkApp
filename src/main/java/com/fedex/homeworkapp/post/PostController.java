@@ -1,4 +1,4 @@
-package com.fedex.homeworkapp.controllers;
+package com.fedex.homeworkapp.post;
 
 import com.fedex.homeworkapp.post.PostModel;
 import com.fedex.homeworkapp.post.PostService;
@@ -12,20 +12,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
-public class ForumController {
+@RequestMapping("/")
+public class PostController {
 
     private PostService postService;
 
     @Autowired
-    public ForumController(PostService postService) {
+    public PostController(PostService postService) {
         this.postService = postService;
     }
 
     @GetMapping("forum/{subject}")
-    public List<PostModel> getAllPostsBySubject(@PathVariable("subject") Enum Post) {
-        List<PostModel> posts = new ArrayList<>();
-        return posts;
+    public PostListDTO getAllPostsBySubject(@PathVariable("subject") String subject) {
+        PostListDTO postListDTO = new PostListDTO();
+        postListDTO.setPosts(postService.findPostsBySubject(subject));
+        return postListDTO;
     }
 
     @GetMapping("post/{id}")
