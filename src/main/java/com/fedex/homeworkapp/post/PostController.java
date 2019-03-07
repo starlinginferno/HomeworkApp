@@ -1,25 +1,22 @@
 package com.fedex.homeworkapp.post;
 
-import com.fedex.homeworkapp.post.PostModel;
-import com.fedex.homeworkapp.post.PostService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/")
 public class PostController {
 
     private PostService postService;
+    private ModelMapper modelMapper;
 
     @Autowired
-    public PostController(PostService postService) {
+    public PostController(PostService postService, ModelMapper modelMapper) {
         this.postService = postService;
+        this.modelMapper = modelMapper;
     }
 
     @GetMapping("forum/{subject}")
@@ -32,5 +29,13 @@ public class PostController {
     @GetMapping("post/{id}")
     public PostModel getPostById(@PathVariable("id") Long id) {
         return postService.findById(id);
+    }
+
+    @PostMapping("/post")
+    @ResponseStatus(HttpStatus.OK)
+    public void createPost(@RequestBody PostDTO postDTO){
+        PostModel postModel = modelMapper.map(postDTO, PostModel.class);
+        postService.createPost(postModel);
+
     }
 }

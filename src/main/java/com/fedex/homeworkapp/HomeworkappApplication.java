@@ -3,6 +3,7 @@ package com.fedex.homeworkapp;
 import com.fedex.homeworkapp.user.persistence.model.UserRole;
 import com.fedex.homeworkapp.user.persistence.repository.RoleRepository;
 import com.fedex.homeworkapp.user.utility.Role;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,5 +28,10 @@ public class HomeworkappApplication {
             });
             roleRepository.findAll().forEach(System.out::println);
         };
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
     }
 }
