@@ -8,6 +8,7 @@ import com.fedex.homeworkapp.user.persistence.model.ApplicationUser;
 import com.fedex.homeworkapp.user.persistence.model.UserRole;
 import com.fedex.homeworkapp.user.persistence.repository.ApplicationUserRepository;
 import com.fedex.homeworkapp.user.utility.ApplicationUserDTO;
+import com.fedex.homeworkapp.user.utility.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
@@ -75,5 +76,12 @@ public class ApplicationUserService {
     public List<String> findAllUsernames() {
         List<ApplicationUser> allUsers = applicationUserRepository.findAll();
         return allUsers.stream().map(ApplicationUser::getUsername).collect(Collectors.toList());
+    }
+    public List<ApplicationUser> findStudents() {
+        return applicationUserRepository.findApplicationUsersByRoles(Role.STUDENT);
+    }
+
+    public List<ApplicationUser> findTeachers() {
+        return applicationUserRepository.findApplicationUsersByRoles(Role.TEACHER);
     }
 }

@@ -64,11 +64,16 @@ public class SimilarityChecker {
         return similarity;
     }
 
+    public int sentenceCounter(Long id) {
+        return homeworkToMatch(id).getContent().split(".").length;
+    }
+
     public HashMap<Long, Double> similarityPercentage(Long id, HashMap<Long, Double> similarity) {
-        int wordCount =
+        int sentenceCount = sentenceCounter(id);
         HashMap<Long, Double> similarityPercentage = new HashMap<>();
         for(Long key : similarity.keySet()) {
-            similarityPercentage.put(key, (similarity.get(key) / 5 * 100.00));
+            similarityPercentage.put(key, (similarity.get(key) / sentenceCount * 100.00));
         }
+        return similarityPercentage;
     }
 }
