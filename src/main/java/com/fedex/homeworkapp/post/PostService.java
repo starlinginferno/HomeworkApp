@@ -11,4 +11,6 @@ public interface PostService {
     void deletePost(Long id);
 
     void votePost(Long id, Boolean vote);
+
+    PostModel findById(Long id);
 }

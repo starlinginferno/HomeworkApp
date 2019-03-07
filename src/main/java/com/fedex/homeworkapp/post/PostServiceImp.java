@@ -34,4 +34,9 @@ public class PostServiceImp implements PostService {
     public void votePost(Long id, Boolean vote) {
 
     }
+
+    @Override
+    public PostModel findById(Long id) {
+        return null;
+    }
 }
