@@ -1,5 +1,6 @@
 package com.fedex.homeworkapp.homework;
 
+import com.fedex.homeworkapp.post.Subject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +23,17 @@ public class HomeworkServiceImp implements HomeworkService {
     }
 
     @Override
+    public Homework findById(Long id) {
+        return null;
+    }
+
+    @Override
     public List<Homework> getAllHomework() {
+        return null;
+    }
+
+    @Override
+    public List<Homework> getHomeworksBySubject(Subject subject) {
         return null;
     }
 }

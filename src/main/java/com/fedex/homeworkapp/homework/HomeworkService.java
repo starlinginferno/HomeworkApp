@@ -1,5 +1,7 @@
 package com.fedex.homeworkapp.homework;
 
+import com.fedex.homeworkapp.post.Subject;
+
 import java.util.List;
 
 public interface HomeworkService {
@@ -10,5 +12,9 @@ public interface HomeworkService {
 
     void deleteHomework(Long id);
 
+    Homework findById(Long id);
+
     List<Homework> getAllHomework();
+
+    List<Homework> getHomeworksBySubject(Subject subject);
 }

@@ -1,5 +1,7 @@
 package com.fedex.homeworkapp.post;
 
+import com.fedex.homeworkapp.user.persistence.model.ApplicationUser;
+
 public interface PostService {
 
     void createPost(PostModel postModel);

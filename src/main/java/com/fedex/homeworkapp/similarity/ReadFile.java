@@ -1,4 +1,4 @@
-package com.fedex.homeworkapp.plagiarism;
+package com.fedex.homeworkapp.similarity;
 
 import java.io.IOException;
 import java.nio.file.Files;
