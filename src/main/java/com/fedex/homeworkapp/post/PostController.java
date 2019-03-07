@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/")
 public class PostController {
 
     private PostService postService;
