@@ -45,7 +45,7 @@ public class PostServiceImp implements PostService {
     @Override
     public List<PostModel> findPostsBySubject(String subject) {
         for (Subject s : Subject.values()) {
-            if(s.getName().equals(subject)) {
+            if(s.getName().equals(subject.toUpperCase())) {
                 return postRepository.findAllBySubject(s);
             }
         }
