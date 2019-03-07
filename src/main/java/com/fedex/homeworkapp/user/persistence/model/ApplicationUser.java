@@ -1,6 +1,9 @@
 package com.fedex.homeworkapp.user.persistence.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fedex.homeworkapp.comment.CommentModel;
+import com.fedex.homeworkapp.homework.Homework;
+import com.fedex.homeworkapp.post.PostModel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -37,6 +40,18 @@ public class ApplicationUser {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     @JsonManagedReference
     private List<UserRole> roles = new ArrayList<>();
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "postsUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<PostModel> usersPosts;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "commentsUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CommentModel> usersComments;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "homeworksUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Homework> usersHomework;
 
     public void setRoles(List<UserRole> roles) {
         this.roles = roles;
