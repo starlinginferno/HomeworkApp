@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.fedex.homeworkapp.post.Subject.ENGLISH;
 
@@ -77,11 +78,17 @@ public class SimilarityChecker {
         return similarityPercentage;
     }
 
-    public List<String> similarityAnswers(Long id, HashMap<Long, Double> similarity) {
+    public List<SimilarityModel> similarityAnswers(Long id, HashMap<Long, Double> similarity) {
+        SimilarityModel tempModel = new SimilarityModel();
         List<SimilarityModel> similarityAnswer = new ArrayList<>();
         for (Long key : similarity.keySet()) {
             Homework tempHomework = homeworkService.findById(key);
-            similarityAnswer.add(tempHomework.)
+            tempModel.setStudentId(tempHomework.getHomeworksUser().getId());
+            tempModel.setStudentName(tempHomework.getHomeworksUser().getUsername());
+            tempModel.setTitle(tempHomework.getTitle());
+            tempModel.setSimilarity(similarity.get(key));
+            similarityAnswer.add(tempModel);
         }
+        return similarityAnswer;
     }
 }

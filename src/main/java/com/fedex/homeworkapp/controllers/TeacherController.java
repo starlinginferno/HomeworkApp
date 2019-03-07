@@ -29,8 +29,8 @@ public class TeacherController {
         return applicationUserService.findStudents();
     }
 
-    @GetMapping("homeworks")
-    public List<Homework> getAllHomeworks() {
+    @GetMapping("homework")
+    public List<Homework> getAllHomework() {
         return homeworkService.getAllHomework();
     }
 }

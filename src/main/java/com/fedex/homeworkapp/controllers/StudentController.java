@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/")
 public class StudentController {
 
-//    @GetMapping("homework")
-//    public Homework getHomework() {
-//        return homework;
-//    }
+    @GetMapping("homework")
+    public Homework getHomework() {
+        return homework;
+    }
 }

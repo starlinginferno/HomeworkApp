@@ -23,7 +23,7 @@ public class ForumController {
     }
 
     @GetMapping("forum/{subject}")
-    public List<PostModel> getAllPostsBySubject(@PathVariable("subject") String subject) {
+    public List<PostModel> getAllPostsBySubject(@PathVariable("subject") Enum Post) {
         List<PostModel> posts = new ArrayList<>();
         return posts;
     }
