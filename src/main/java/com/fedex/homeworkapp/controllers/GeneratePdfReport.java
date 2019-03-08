@@ -32,11 +32,11 @@ public class GeneratePdfReport {
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(hcell);
 
-            hcell = new PdfPCell(new Phrase("Name", headFont));
+            hcell = new PdfPCell(new Phrase("Title", headFont));
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(hcell);
 
-            hcell = new PdfPCell(new Phrase("Population", headFont));
+            hcell = new PdfPCell(new Phrase("Content", headFont));
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(hcell);
 
