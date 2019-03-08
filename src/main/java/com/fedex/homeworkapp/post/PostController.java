@@ -27,8 +27,13 @@ public class PostController {
     }
 
     @GetMapping("post/{id}")
-    public PostModel getPostById(@PathVariable("id") Long id) {
-        return postService.findById(id);
+    public PostDTO getPostById(@PathVariable("id") Long id) {
+        PostDTO dto = new PostDTO();
+        PostModel model = postService.findById(id);
+        dto.setTitle(model.getTitle());
+        dto.setContent(model.getContent());
+        dto.setSubject(model.getSubject());
+        return dto;
     }
 
     @PostMapping("/post")

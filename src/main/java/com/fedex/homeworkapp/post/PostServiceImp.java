@@ -24,7 +24,6 @@ public class PostServiceImp implements PostService {
     @Override
     public void editPost(Long id, ApplicationUser applicationUser) {
 
-
     }
 
     @Override
@@ -39,7 +38,7 @@ public class PostServiceImp implements PostService {
 
     @Override
     public PostModel findById(Long id) {
-        return null;
+        return postRepository.findById(id).get();
     }
 
     @Override
@@ -50,5 +49,10 @@ public class PostServiceImp implements PostService {
             }
         }
         throw new IllegalArgumentException("No such type");
+    }
+
+    @Override
+    public List<PostModel> findAllPosts() {
+        return postRepository.findAll();
     }
 }

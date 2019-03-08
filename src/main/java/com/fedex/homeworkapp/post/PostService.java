@@ -17,4 +17,6 @@ public interface PostService {
     PostModel findById(Long id);
 
     List<PostModel> findPostsBySubject(String subject);
+
+    List<PostModel> findAllPosts();
 }
