@@ -1,5 +1,6 @@
-package com.fedex.homeworkapp.controllers;
+package com.fedex.homeworkapp.exam;
 
+import com.fedex.homeworkapp.exam.GeneratePdfReport;
 import com.fedex.homeworkapp.post.PostModel;
 import com.fedex.homeworkapp.post.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
